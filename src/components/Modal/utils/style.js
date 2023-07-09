@@ -13,12 +13,16 @@ export const ButtonAdd = styled("button")({
 // :::::ESTILO PARA EL MODAL:::::
 export const style = {
   position: "absolute",
-  top: "50%",
-  left: "50%",
-  width: 400,
-  boxShadow: 24,
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  maxWidth: 400,
+  maxHeight: 530,
   borderRadius: "20px",
-  bgcolor: "background.paper",
-  transform: "translate(-50%, -50%)",
+  backgroundColor: "#fff",
+  margin: "auto",
+  display: "flex",
+  boxShadow: 24,
   p: 4,
 };

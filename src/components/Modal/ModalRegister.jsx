@@ -21,6 +21,7 @@ const ModalRegister = () => {
   return (
     <Modal
       open={modalAdd}
+      sx={{ margin: "5px" }}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
       onClose={() => setOpen({ modalAdd: false, modalEdit: false })}
