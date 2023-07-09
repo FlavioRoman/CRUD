@@ -16,6 +16,7 @@ const ModalRegister = () => {
     profile,
     setProfile,
     open: { modalAdd },
+    setAlert,
     setOpen,
   } = useContext(RegistersContext);
   return (
@@ -68,7 +69,9 @@ const ModalRegister = () => {
           }
         />
         {/* :::::BOTON PARA AGREGAR NUEVO REGISTRO::::: */}
-        <ButtonAdd onClick={() => add(profile, data, setData, setOpen)}>
+        <ButtonAdd
+          onClick={() => add(profile, data, setData, setOpen, setAlert)}
+        >
           AGREGAR
         </ButtonAdd>
       </Stack>

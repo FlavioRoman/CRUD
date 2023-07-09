@@ -7,6 +7,7 @@ import Search from "./components/Search";
 import Profile from "./components/Profile";
 import ModalEdit from "./components/Modal/ModalEdit";
 import ModalRegister from "./components/Modal/ModalRegister";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Profile />
       <ModalRegister />
       <ModalEdit />
+      <Footer />
     </Container>
   );
 }

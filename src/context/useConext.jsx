@@ -1,5 +1,5 @@
 // :::::HOOKS:::::
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 // :::::IMPORTAR DATOS:::::
 import { datos } from "../components/utils/datos";
 
@@ -8,8 +8,9 @@ export const RegistersContext = createContext();
 
 // :::::PROVEER EL CONTEXTO:::::
 export const RegistersProvider = ({ children }) => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(datos);
   const [identifier, setIdentifier] = useState();
+  const [alert, setAlert] = useState({ success: false, error: false });
   const [open, setOpen] = useState({ modalAdd: false, modalEdit: false });
   const [profile, setProfile] = useState({
     img: "",
@@ -17,10 +18,6 @@ export const RegistersProvider = ({ children }) => {
     lastName: "",
     year: "",
   });
-
-  useEffect(() => {
-    setData(datos);
-  }, []);
 
   return (
     <RegistersContext.Provider
@@ -31,6 +28,8 @@ export const RegistersProvider = ({ children }) => {
         setOpen,
         profile,
         setProfile,
+        alert,
+        setAlert,
         identifier,
         setIdentifier,
       }}

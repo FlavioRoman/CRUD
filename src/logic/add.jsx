@@ -1,7 +1,8 @@
 // :::::FUNCION PARA AGREGAR NUEVO REGISRO:::::
-export const add = (text, data, funcData, funcOpen) => {
+export const add = (text, data, funcData, funcOpen, funcAlert) => {
   const newArr = [...data];
   if (!text.img || !text.name || !text.lastName || !text.year) {
+    funcAlert({ success: false, error: true });
     return;
   }
   newArr.push({
@@ -11,5 +12,6 @@ export const add = (text, data, funcData, funcOpen) => {
     año: text.year,
   });
   funcData(newArr);
+  funcAlert({ success: true, error: false });
   funcOpen({ modalAdd: false, modalEdit: false });
 };
